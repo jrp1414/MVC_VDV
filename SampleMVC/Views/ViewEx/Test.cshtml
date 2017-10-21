@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Test";
+}
+<script>
+    window.onload = function () {
+        document.getElementById("btnClick").onclick = function () {
+            console.log({
+                Name:"Ram", Address:"Pune", Age:25
+            });
+        }
+    }
+</script>
+<h2>Test Html Page</h2>
+<h3>
+    This HTML page will be called from another controller class.
+</h3>
+
+<button id="btnClick">Click here</button>
+
