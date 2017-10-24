@@ -1,7 +1,62 @@
-﻿
+﻿@using SampleMVC.Models
 @{
     ViewBag.Title = "VX1";
 }
+@{
+    var names = new List<string> { "Ram", "MOhan", "Deepak" };
+    var students = new List<Student>
+    {
+        new Student { Name="Ram", Address="Pune" },
+        new Student { Name = "Amol", Address = "Mumbai" },
+        new Student { Name = "Aman", Address = "Delhi" },
+        new Student { Name = "Ramesh", Address = "Chennai" }
+    };
+}
+
+@foreach (var name in names)
+{
+    if (name.Length > 3)
+    {
+        <div class="alert alert-success">
+            @name
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-info">
+            @name
+        </div>
+    }
+}
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in students)
+        {
+            if (student.Name.Length > 3)
+            {
+                <tr class="alert alert-success">
+                    <td>@student.Name</td>
+                    <td>@student.Address</td>
+                </tr>
+            }
+            else
+            {
+                <tr class="alert alert-info">
+                    <td>@student.Name</td>
+                    <td>@student.Address</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
 
 <h2>VX1</h2>
 
@@ -10,7 +65,7 @@
     </h3>*@
 
 @*<h3>
-        @DateTime.NowThis is the current Date and time.
+        @DateTime.NowThis is the current Date and time.  -- This will throw error, as my framework will consider DateTime.NowThis as a C# expression.
     </h3>*@
 
 <h3>
@@ -20,3 +75,8 @@
 @*2017-10-18 9.25.03PMThis*@
 
 @@narendramodi
+
+@*@Html.ActionLink("Go to VX2", "VX2")*@
+
+<a href="/ViewEx/VX2">VX 2</a>
+

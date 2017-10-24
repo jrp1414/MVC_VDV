@@ -23,7 +23,7 @@ namespace SampleMVC.Controllers
 
         public HttpNotFoundResult Http404Ex()
         {
-            return HttpNotFound("Cannot find error based on your input");
+            return HttpNotFound("Some Error Occured");
         }
 
         public RedirectResult RedirectEx()
@@ -56,8 +56,12 @@ namespace SampleMVC.Controllers
         }
 
         public ActionResult VX1()
+        {            
+            return View();
+        }
+
+        public ActionResult VX2()
         {
-            
             return View();
         }
 

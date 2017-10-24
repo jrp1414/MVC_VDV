@@ -190,6 +190,7 @@
     <Content Include="Views\Home\Welcome2.cshtml" />
     <Content Include="Views\ViewEx\Test.cshtml" />
     <Content Include="Views\ViewEx\VX1.cshtml" />
+    <Content Include="Views\ViewEx\VX2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
