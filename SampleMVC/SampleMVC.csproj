@@ -191,6 +191,7 @@
     <Content Include="Views\ViewEx\Test.cshtml" />
     <Content Include="Views\ViewEx\VX1.cshtml" />
     <Content Include="Views\ViewEx\VX2.cshtml" />
+    <Content Include="Views\Shared\LayoutNew.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

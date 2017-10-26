@@ -1,6 +1,8 @@
 ﻿@using SampleMVC.Models
 @{
     ViewBag.Title = "VX1";
+    Layout = "~/Views/Shared/LayoutNew.cshtml";
+    
 }
 @{
     var names = new List<string> { "Ram", "MOhan", "Deepak" };
@@ -80,3 +82,8 @@
 
 <a href="/ViewEx/VX2">VX 2</a>
 
+
+
+@section ABC{
+    <h3>Child Page Section from VX 1</h3>
+}

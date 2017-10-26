@@ -63,6 +63,7 @@ namespace SampleMVC.Controllers
         public ActionResult VX2()
         {
             return View();
+            //return View("LayoutNew");
         }
 
     }
