@@ -1,0 +1,27 @@
+﻿@model StudentData
+@{
+    ViewBag.Title = "ModelEx1";
+}
+
+<h2>ModelEx1</h2>
+
+@Html.ActionLink("Back To List","ModelEx2")
+
+<div class="well">
+    <div class="row">
+        <div class="col-md-2">Id :</div>
+        <div class="col-md-2">@Model.Id</div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">Name :</div>
+        <div class="col-md-2">@Model.Name</div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">Address :</div>
+        <div class="col-md-2">@Model.Address</div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">Age :</div>
+        <div class="col-md-2">@Model.Age</div>
+    </div>
+</div>

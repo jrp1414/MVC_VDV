@@ -12,7 +12,7 @@ namespace SampleMVC.Controllers
         // GET: ViewEx
         public JsonResult Index()
         {
-            return Json(new Student { Name="Ram", Address="Pune" },JsonRequestBehavior.AllowGet);
+            return Json(new Student { Name = "Ram", Address = "Pune" }, JsonRequestBehavior.AllowGet);
         }
 
         public ContentResult ContentEx()
@@ -56,7 +56,7 @@ namespace SampleMVC.Controllers
         }
 
         public ActionResult VX1()
-        {            
+        {
             return View();
         }
 
@@ -65,6 +65,51 @@ namespace SampleMVC.Controllers
             return View();
             //return View("LayoutNew");
         }
+
+        public ActionResult PartialViewEx()
+        {
+            return View();
+        }
+
+        [ChildActionOnly]
+        public PartialViewResult ChildPage2()
+        {
+            return PartialView();
+        }
+
+        //public ActionResult ModelEx1()
+        //{
+        //    //I will write few lines of code which will execute some query in the DB and get me the data of this student.
+        //    //var std = new StudentData { Id = 1, Name = "Ram", Address = "Pune", Age = 25 };
+        //    //return View();
+        //    //return View(std);
+        //}
+
+        //public ActionResult ModelEx1(int id,)
+        //{
+        //    return View(students.FirstOrDefault(a=>a.Id== id));
+        //}
+
+        public ActionResult ModelEx1(int id,string name)
+        {
+            return View(students.FirstOrDefault(a => a.Id == id));
+        }
+
+        public ActionResult ModelEx2()
+        {
+            //I will write few lines of code which will execute some query in the DB and get me the data of this student.
+            
+            return View(students);
+        }
+
+        static List<StudentData> students = new List<StudentData>
+            {
+                new StudentData{ Id=1, Name="Ram", Address="Pune", Age=20 },
+                new StudentData{ Id=2, Name="Ramesh", Address="Mumbai", Age=19 },
+                new StudentData{ Id=3, Name="Rohan", Address="Chennai", Age=20 },
+                new StudentData{ Id=4, Name="Raj", Address="Delhi", Age=19 },
+                new StudentData{ Id=5, Name="Rajesh", Address="Mumbai", Age=18 }
+            };
 
     }
 }

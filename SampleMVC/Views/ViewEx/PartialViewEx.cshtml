@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "PartialViewEx";
+
+}
+
+<h2>PartialViewEx</h2>
+
+@*@{ 
+    Html.RenderPartial("ChildPage");
+}
+
+@{
+    Html.RenderPartial("ChildPage");
+}
+
+@{
+    Html.RenderPartial("ChildPage");
+}
+
+@{
+    Html.RenderPartial("ChildPage");
+}*@
+
+@*@Html.Partial("ChildPage")
+
+@Html.Partial("ChildPage")
+
+@Html.Partial("ChildPage")*@
+
+@*@{ 
+    var abc = Html.Partial("ChildPage");
+    var name = "";
+}
+
+
+@abc
+@abc*@
+
+@*@{ 
+    Html.RenderAction("ChildPage2");
+}
+
+@{
+    Html.RenderAction("ChildPage2");
+}*@
+
+@*@Html.Action("ChildPage2")*@
+
+@{ 
+    var childPage = Html.Action("ChildPage2");
+}
+
+@childPage
+
+@childPage
+
+

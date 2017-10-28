@@ -147,6 +147,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Student.cs" />
+    <Compile Include="Models\StudentData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -192,6 +193,11 @@
     <Content Include="Views\ViewEx\VX1.cshtml" />
     <Content Include="Views\ViewEx\VX2.cshtml" />
     <Content Include="Views\Shared\LayoutNew.cshtml" />
+    <Content Include="Views\ViewEx\PartialViewEx.cshtml" />
+    <Content Include="Views\Shared\ChildPage.cshtml" />
+    <Content Include="Views\ViewEx\ChildPage2.cshtml" />
+    <Content Include="Views\ViewEx\ModelEx1.cshtml" />
+    <Content Include="Views\ViewEx\ModelEx2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
