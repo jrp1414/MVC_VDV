@@ -90,7 +90,7 @@ namespace SampleMVC.Controllers
         //    return View(students.FirstOrDefault(a=>a.Id== id));
         //}
 
-        public ActionResult ModelEx1(int id,string name)
+        public ActionResult ModelEx1(int id, string name)
         {
             return View(students.FirstOrDefault(a => a.Id == id));
         }
@@ -98,9 +98,30 @@ namespace SampleMVC.Controllers
         public ActionResult ModelEx2()
         {
             //I will write few lines of code which will execute some query in the DB and get me the data of this student.
-            
+
             return View(students);
         }
+
+        [HttpGet]
+        public ActionResult CreateStudentHtml()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CreateStudentHtml(FormCollection form, StudentData data)
+        {
+            //var name = form["Name"];
+            //var address = form["Address"];
+            //var age = Convert.ToInt32(form["Age"]);
+            var id = students.Max(m => m.Id);
+            //students.Add(new StudentData { Id= (id+1), Name=name, Address=address, Age= age });
+            students.Add(new StudentData { Id= (id+1), Name=data.Name, Address=data.Address, Age= data.Age});
+
+            //return View();
+            return RedirectToAction("ModelEx2");
+        }
+
 
         static List<StudentData> students = new List<StudentData>
             {
