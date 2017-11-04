@@ -99,13 +99,17 @@ namespace SampleMVC.Controllers
         {
             //I will write few lines of code which will execute some query in the DB and get me the data of this student.
 
-            return View(students);
+            return View(students.OrderBy(m=>m.Id).ToList());
         }
 
         [HttpGet]
-        public ActionResult CreateStudentHtml()
+        public ActionResult CreateStudentHtml(int id=0)
         {
-            return View();
+            if (id>0)
+            {
+                return View(students.FirstOrDefault(m=>m.Id==id));
+            }
+            return View(new StudentData()); 
         }
 
         [HttpPost]
@@ -114,11 +118,67 @@ namespace SampleMVC.Controllers
             //var name = form["Name"];
             //var address = form["Address"];
             //var age = Convert.ToInt32(form["Age"]);
-            var id = students.Max(m => m.Id);
+            //var id = students.Max(m => m.Id);
             //students.Add(new StudentData { Id= (id+1), Name=name, Address=address, Age= age });
-            students.Add(new StudentData { Id= (id+1), Name=data.Name, Address=data.Address, Age= data.Age});
+            //students.Add(new StudentData { Id= (id+1), Name=data.Name, Address=data.Address, Age= data.Age});
 
             //return View();
+
+
+            if (data.Id>0)
+            {
+                var tempStd = students.FirstOrDefault(m => m.Id==data.Id);
+                if (tempStd!=null)
+                {
+                    students.Remove(students.FirstOrDefault(m => m.Id == data.Id));
+                    students.Add(data);
+                }
+            }
+            else
+            {
+                data.Id = (students.Max(m => m.Id)+1);
+                students.Add(data);
+            }
+            return RedirectToAction("ModelEx2");
+        }
+
+        [HttpGet]
+        public ActionResult CreateStudentHtmlHelper1(int id = 0)
+        {
+            if (id > 0)
+            {
+                return View(students.FirstOrDefault(m => m.Id == id));
+            }
+            return View(new StudentData());
+        }
+
+        [HttpPost]
+        public ActionResult CreateStudentHtmlHelper1(FormCollection form, StudentData data)
+        {
+            if (data.Id > 0)
+            {
+                var tempStd = students.FirstOrDefault(m => m.Id == data.Id);
+                if (tempStd != null)
+                {
+                    students.Remove(students.FirstOrDefault(m => m.Id == data.Id));
+                    students.Add(data);
+                }
+            }
+            else
+            {
+                data.Id = (students.Max(m => m.Id) + 1);
+                students.Add(data);
+            }
+            return RedirectToAction("ModelEx2");
+        }
+
+        [HttpGet]
+        public ActionResult DeleteStudent(int id = 0)
+        {
+            if (id > 0)
+            {
+                students.Remove(students.FirstOrDefault(m => m.Id == id));                
+            }
             return RedirectToAction("ModelEx2");
         }
 

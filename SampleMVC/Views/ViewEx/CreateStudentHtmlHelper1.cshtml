@@ -1,0 +1,81 @@
+﻿@model StudentData
+@{
+    ViewBag.Title = "Create Student Html Helper";
+}
+
+<h2>CreateStudentHtml</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.Hidden("Id",Model.Id)
+    <div class="row">
+        <div class="col-md-2">
+            Name
+        </div>
+        <div class="col-md-2">
+            @Html.TextBox("Name",Model.Name,new { @class="form-control" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            Address
+        </div>
+        <div class="col-md-2">
+            @Html.TextArea("Address", Model.Address, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            Age
+        </div>
+        <div class="col-md-2">
+            @Html.TextBox("Age", Model.Age, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            City
+        </div>
+        <div class="col-md-2">
+            @Html.DropDownList("SelectedCity", Model.Cities,"-Select-", new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            Skills
+        </div>
+        <div class="col-md-2">
+            @Html.ListBox("SelectedSkills", Model.Skills, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            Gender
+        </div>
+        <div class="col-md-2">
+            @Html.RadioButton("Gender","1") <span>Male</span>
+        </div>
+        <div class="col-md-2">
+            @Html.RadioButton("Gender", "2") <span>Female</span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            Age
+        </div>
+        <div class="col-md-2">
+            @Html.CheckBox("IsAdult", Model.IsAdult)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </div>
+    </div>
+}
+    
+

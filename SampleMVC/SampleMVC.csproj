@@ -199,6 +199,7 @@
     <Content Include="Views\ViewEx\ModelEx1.cshtml" />
     <Content Include="Views\ViewEx\ModelEx2.cshtml" />
     <Content Include="Views\ViewEx\CreateStudentHtml.cshtml" />
+    <Content Include="Views\ViewEx\CreateStudentHtmlHelper1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
