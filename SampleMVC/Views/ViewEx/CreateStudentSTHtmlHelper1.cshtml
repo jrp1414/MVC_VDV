@@ -1,0 +1,100 @@
+﻿@model StudentData
+@{
+    ViewBag.Title = "Create Student Html Helper";
+}
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+<h2>CreateStudentHtml</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.Hidden("Id", Model.Id)
+    <div class="row">
+        <div class="col-md-2">
+            @Html.LabelFor(m=>m.Name)
+        </div>
+        <div class="col-md-2">
+            @Html.TextBoxFor(m=>m.Name, new { @class = "form-control" })            
+        </div>
+        <div class="col-md-4">
+            @Html.ValidationMessageFor(m => m.Name, null, new { @class = "alert alert-danger" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            @Html.LabelFor(m => m.Address)
+        </div>
+        <div class="col-md-2">
+            @Html.TextAreaFor(m=>m.Address, new { @class = "form-control" })
+            
+        </div>
+        <div class="col-md-4">
+            @Html.ValidationMessageFor(m => m.Address, null, new { @class = "alert alert-danger" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            @Html.LabelFor(m => m.Age)
+        </div>
+        <div class="col-md-2">
+            @Html.EditorFor(m=>m.Age, new { @class = "form-control" })            
+        </div>
+        <div class="col-md-4">
+            @Html.ValidationMessageFor(m => m.Age, null, new { @class = "alert alert-danger" })
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            @Html.LabelFor(m => m.SelectedCity)
+        </div>
+        <div class="col-md-2">
+            @Html.DropDownListFor(m=>m.SelectedCity,Model.Cities, "-Select-", new { @class = "form-control" })            
+        </div>
+        <div class="col-md-4">
+            @Html.ValidationMessageFor(m => m.SelectedCity, null, new { @class = "alert alert-danger" })
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            @Html.LabelFor(m => m.SelectedSkills)
+        </div>
+        <div class="col-md-2">
+            @Html.ListBoxFor(m=>m.SelectedSkills, Model.Skills, new { @class = "form-control" })
+            
+        </div>
+        <div class="col-md-4">
+            @Html.ValidationMessageFor(m => m.SelectedSkills, null, new { @class = "alert alert-danger" })
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            @Html.LabelFor(m => m.Gender)
+        </div>
+        <div class="col-md-2">
+            @Html.RadioButtonFor(m=>m.Gender, "1") <span>Male</span>
+        </div>
+        <div class="col-md-4">
+            @Html.RadioButtonFor(m => m.Gender, "2") <span>Female</span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            @Html.LabelFor(m => m.IsAdult)
+        </div>
+        <div class="col-md-2">
+            @Html.CheckBoxFor(m=>m.IsAdult)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </div>
+    </div>
+}
+
+

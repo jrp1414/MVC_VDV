@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -28,22 +29,27 @@ namespace SampleMVC.Models
         }
         public int Id { get; set; }
 
+        [Required(AllowEmptyStrings =false,ErrorMessage ="Please enter Name")]
         public string Name { get; set; }
 
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Please enter Address")]
         public string Address { get; set; }
 
         public int Age { get; set; }
 
+        [Display(Name="City")]
         public int SelectedCity { get; set; }
 
         public List<SelectListItem> Cities { get; set; }
 
+        [Display(Name = "Skills")]
         public string[] SelectedSkills { get; set; }
 
         public List<SelectListItem> Skills { get; set; }
 
         public int Gender { get; set; }
 
+        [Display(Name = "Is Adult")]
         public bool IsAdult { get; set; }
     }
 }

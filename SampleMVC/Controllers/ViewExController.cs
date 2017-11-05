@@ -173,6 +173,40 @@ namespace SampleMVC.Controllers
         }
 
         [HttpGet]
+        public ActionResult CreateStudentSTHtmlHelper1(int id = 0)
+        {
+            if (id > 0)
+            {
+                return View(students.FirstOrDefault(m => m.Id == id));
+            }
+            return View(new StudentData());
+        }
+
+        [HttpPost]
+        public ActionResult CreateStudentSTHtmlHelper1(FormCollection form, StudentData data)
+        {
+            if (ModelState.IsValid)
+            {
+                if (data.Id > 0)
+                {
+                    var tempStd = students.FirstOrDefault(m => m.Id == data.Id);
+                    if (tempStd != null)
+                    {
+                        students.Remove(students.FirstOrDefault(m => m.Id == data.Id));
+                        students.Add(data);
+                    }
+                }
+                else
+                {
+                    data.Id = (students.Max(m => m.Id) + 1);
+                    students.Add(data);
+                }
+                return RedirectToAction("ModelEx2");
+            }
+            return View(data);
+        }
+
+        [HttpGet]
         public ActionResult DeleteStudent(int id = 0)
         {
             if (id > 0)

@@ -10,7 +10,7 @@
     @Html.Hidden("Id",Model.Id)
     <div class="row">
         <div class="col-md-2">
-            Name
+            @Html.Label("Name")
         </div>
         <div class="col-md-2">
             @Html.TextBox("Name",Model.Name,new { @class="form-control" })
