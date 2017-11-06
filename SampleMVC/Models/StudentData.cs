@@ -29,19 +29,24 @@ namespace SampleMVC.Models
         }
         public int Id { get; set; }
 
+        [RegularExpression(@"^[A-Za-z]+$",ErrorMessage ="Please enter valid name")]
+        [StringLength(20,MinimumLength =2,ErrorMessage ="Name should be between 2 to 20 charachters")]
         [Required(AllowEmptyStrings =false,ErrorMessage ="Please enter Name")]
         public string Name { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Please enter Address")]
         public string Address { get; set; }
 
+        [Range(6,25,ErrorMessage ="Age should be between 6 to 25" )]
         public int Age { get; set; }
 
         [Display(Name="City")]
+        [Required]
         public int SelectedCity { get; set; }
 
         public List<SelectListItem> Cities { get; set; }
 
+        [Required]
         [Display(Name = "Skills")]
         public string[] SelectedSkills { get; set; }
 
@@ -51,5 +56,26 @@ namespace SampleMVC.Models
 
         [Display(Name = "Is Adult")]
         public bool IsAdult { get; set; }
+
+        [System.ComponentModel.DataAnnotations.Compare("ConfirmPassword")]
+        [Required]
+        public string Password { get; set; }
+
+        [Required]        
+        public string ConfirmPassword { get; set; }
+
+        
+        [DataType(DataType.EmailAddress)]
+        public string Email { get; set; }
+
+        
+        [DataType(DataType.Date)]
+        public DateTime DOB { get; set; }
+
+        [DataType(DataType.Date)]
+        public DateTime StartDate { get; set; }
+
+        [DataType(DataType.Date)]
+        public DateTime EndDate { get; set; }
     }
 }

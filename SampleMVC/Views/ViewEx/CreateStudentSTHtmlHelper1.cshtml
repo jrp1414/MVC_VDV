@@ -5,6 +5,11 @@
 <script src="~/Scripts/jquery-1.10.2.js"></script>
 <script src="~/Scripts/jquery.validate.js"></script>
 <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+<style>
+    .row {
+    margin-top:10px;
+    }
+</style>
 <h2>CreateStudentHtml</h2>
 
 @using (Html.BeginForm())
@@ -17,7 +22,7 @@
         <div class="col-md-2">
             @Html.TextBoxFor(m=>m.Name, new { @class = "form-control" })            
         </div>
-        <div class="col-md-4">
+        <div class="col-md-8">
             @Html.ValidationMessageFor(m => m.Name, null, new { @class = "alert alert-danger" })
         </div>
     </div>
@@ -29,7 +34,7 @@
             @Html.TextAreaFor(m=>m.Address, new { @class = "form-control" })
             
         </div>
-        <div class="col-md-4">
+        <div class="col-md-8">
             @Html.ValidationMessageFor(m => m.Address, null, new { @class = "alert alert-danger" })
         </div>
     </div>
@@ -40,7 +45,7 @@
         <div class="col-md-2">
             @Html.EditorFor(m=>m.Age, new { @class = "form-control" })            
         </div>
-        <div class="col-md-4">
+        <div class="col-md-8">
             @Html.ValidationMessageFor(m => m.Age, null, new { @class = "alert alert-danger" })
         </div>
     </div>
@@ -52,7 +57,7 @@
         <div class="col-md-2">
             @Html.DropDownListFor(m=>m.SelectedCity,Model.Cities, "-Select-", new { @class = "form-control" })            
         </div>
-        <div class="col-md-4">
+        <div class="col-md-8">
             @Html.ValidationMessageFor(m => m.SelectedCity, null, new { @class = "alert alert-danger" })
         </div>
     </div>
@@ -65,7 +70,7 @@
             @Html.ListBoxFor(m=>m.SelectedSkills, Model.Skills, new { @class = "form-control" })
             
         </div>
-        <div class="col-md-4">
+        <div class="col-md-8">
             @Html.ValidationMessageFor(m => m.SelectedSkills, null, new { @class = "alert alert-danger" })
         </div>
     </div>
@@ -77,7 +82,7 @@
         <div class="col-md-2">
             @Html.RadioButtonFor(m=>m.Gender, "1") <span>Male</span>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-8">
             @Html.RadioButtonFor(m => m.Gender, "2") <span>Female</span>
         </div>
     </div>
@@ -90,9 +95,85 @@
             @Html.CheckBoxFor(m=>m.IsAdult)
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            @Html.LabelFor(m => m.Password)
+        </div>
+        <div class="col-md-2">
+            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+        </div>
+        <div class="col-md-8">
+            @Html.ValidationMessageFor(m => m.Password, null, new { @class = "alert alert-danger" })
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            @Html.LabelFor(m => m.ConfirmPassword)
+        </div>
+        <div class="col-md-2">
+            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+        </div>
+        <div class="col-md-8">
+            @Html.ValidationMessageFor(m => m.ConfirmPassword, null, new { @class = "alert alert-danger" })
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            @Html.LabelFor(m => m.Email)
+        </div>
+        <div class="col-md-2">
+            @Html.EditorFor(m => m.Email, new { @class = "form-control" })
+        </div>
+        <div class="col-md-8">
+            @Html.ValidationMessageFor(m => m.Email, null, new { @class = "alert alert-danger" })
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            @Html.LabelFor(m => m.DOB)
+        </div>
+        <div class="col-md-2">
+            @Html.EditorFor(m => m.DOB, new { @class = "form-control" })
+        </div>
+        <div class="col-md-8">
+            @Html.ValidationMessageFor(m => m.DOB, null, new { @class = "alert alert-danger" })
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            @Html.LabelFor(m => m.StartDate)
+        </div>
+        <div class="col-md-2">
+            @Html.EditorFor(m => m.StartDate, new { @class = "form-control" })
+        </div>
+        <div class="col-md-8">
+            @Html.ValidationMessageFor(m => m.StartDate, null, new { @class = "alert alert-danger" })
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            @Html.LabelFor(m => m.EndDate)
+        </div>
+        <div class="col-md-2">
+            @Html.EditorFor(m => m.EndDate, new { @class = "form-control" })
+        </div>
+        <div class="col-md-8">
+            @Html.ValidationMessageFor(m => m.EndDate, null, new { @class = "alert alert-danger" })
+        </div>
+    </div>
+
     <div class="row">
         <div class="col-md-2">
             <input type="submit" value="Save" class="btn btn-primary" />
+        </div>
+        <div class="col-md-2">
+            <input type="reset" value="Reset" class="btn btn-default" />
         </div>
     </div>
 }
