@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SampleMVC.Validation;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -68,13 +69,14 @@ namespace SampleMVC.Models
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
-        
+        [DOB(1992)]       
         [DataType(DataType.Date)]
         public DateTime DOB { get; set; }
 
         [DataType(DataType.Date)]
         public DateTime StartDate { get; set; }
 
+        [DateCompare(OtherPropName = "StartDate")]
         [DataType(DataType.Date)]
         public DateTime EndDate { get; set; }
     }
