@@ -11,11 +11,19 @@ namespace SampleMVC
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
+            routes.MapMvcAttributeRoutes();
+
             //routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             //http://localhost:8585/Home/Index
             //http://localhost:8585
             //http://localhost:8585/contact
             //http://localhost:8585/about.aspx
+            //routes.MapRoute(
+            //    name: "VI2",
+            //    url: "VI2",
+            //    defaults: new { controller = "ViewEx2", action = "Index" }
+            //);
+
             routes.MapRoute(
                 name: "abc",
                 url: "contact",

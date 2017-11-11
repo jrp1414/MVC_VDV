@@ -217,7 +217,7 @@ namespace SampleMVC.Controllers
         }
 
 
-        static List<StudentData> students = new List<StudentData>
+        public static List<StudentData> students = new List<StudentData>
             {
                 new StudentData{ Id=1, Name="Ram", Address="Pune", Age=20 },
                 new StudentData{ Id=2, Name="Ramesh", Address="Mumbai", Age=19 },
