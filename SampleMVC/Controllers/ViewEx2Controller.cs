@@ -10,6 +10,7 @@ namespace SampleMVC.Controllers
     //[Route("VX2/{action}")]
     //[RoutePrefix("VX2")]
     //[HandleError]
+    //[RequireHttps]
     public class ViewEx2Controller : Controller
     {
         // GET: ViewEx2
@@ -41,9 +42,10 @@ namespace SampleMVC.Controllers
 
         [Route("ErrorEx")]
         //[HandleError]
+        //[RequireHttps]
         public ActionResult ErrorEx()
         {
-            throw new Exception("Some Error occurred");
+            //throw new Exception("Some Error occurred");
             return View();
         }
     }
