@@ -1,4 +1,5 @@
-﻿@model StudentData
+﻿@using SampleMVC.HtmlHelpers
+@model StudentData
 @{
     ViewBag.Title = "Create Student Html Helper";
 }
@@ -8,14 +9,18 @@
 @using (Html.BeginForm())
 {
     @Html.Hidden("Id",Model.Id)
-    <div class="row">
+    
+    @*@Html.CTextBox()*@
+    @*<div class="row">
         <div class="col-md-2">
             @Html.Label("Name")
         </div>
         <div class="col-md-2">
             @Html.TextBox("Name",Model.Name,new { @class="form-control" })
         </div>
-    </div>
+    </div>*@
+    @Html.CTextBox("Enter Name",Model.Name, "Name")
+
     <div class="row">
         <div class="col-md-2">
             Address
@@ -24,14 +29,15 @@
             @Html.TextArea("Address", Model.Address, new { @class = "form-control" })
         </div>
     </div>
-    <div class="row">
+    @*<div class="row">
         <div class="col-md-2">
             Age
         </div>
         <div class="col-md-2">
             @Html.TextBox("Age", Model.Age, new { @class = "form-control" })
         </div>
-    </div>
+    </div>*@
+    @Html.CTextBox("Enter Age", Model.Age.ToString(), "Age")
 
     <div class="row">
         <div class="col-md-2">

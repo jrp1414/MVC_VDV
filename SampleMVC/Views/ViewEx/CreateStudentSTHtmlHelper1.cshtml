@@ -1,4 +1,5 @@
-﻿@model StudentData
+﻿@using SampleMVC.HtmlHelpers
+@model StudentData
 @{
     ViewBag.Title = "Create Student Html Helper";
 }
@@ -15,7 +16,7 @@
 @using (Html.BeginForm())
 {
     @Html.Hidden("Id", Model.Id)
-    <div class="row">
+    @*<div class="row">
         <div class="col-md-2">
             @Html.LabelFor(m=>m.Name)
         </div>
@@ -25,7 +26,10 @@
         <div class="col-md-8">
             @Html.ValidationMessageFor(m => m.Name, null, new { @class = "alert alert-danger" })
         </div>
-    </div>
+    </div>*@
+
+    @Html.CTextBoxFor(m=>m.Name)
+    
     <div class="row">
         <div class="col-md-2">
             @Html.LabelFor(m => m.Address)
