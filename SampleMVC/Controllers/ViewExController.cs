@@ -99,17 +99,17 @@ namespace SampleMVC.Controllers
         {
             //I will write few lines of code which will execute some query in the DB and get me the data of this student.
 
-            return View(students.OrderBy(m=>m.Id).ToList());
+            return View(students.OrderBy(m => m.Id).ToList());
         }
 
         [HttpGet]
-        public ActionResult CreateStudentHtml(int id=0)
+        public ActionResult CreateStudentHtml(int id = 0)
         {
-            if (id>0)
+            if (id > 0)
             {
-                return View(students.FirstOrDefault(m=>m.Id==id));
+                return View(students.FirstOrDefault(m => m.Id == id));
             }
-            return View(new StudentData()); 
+            return View(new StudentData());
         }
 
         [HttpPost]
@@ -125,10 +125,10 @@ namespace SampleMVC.Controllers
             //return View();
 
 
-            if (data.Id>0)
+            if (data.Id > 0)
             {
-                var tempStd = students.FirstOrDefault(m => m.Id==data.Id);
-                if (tempStd!=null)
+                var tempStd = students.FirstOrDefault(m => m.Id == data.Id);
+                if (tempStd != null)
                 {
                     students.Remove(students.FirstOrDefault(m => m.Id == data.Id));
                     students.Add(data);
@@ -136,7 +136,7 @@ namespace SampleMVC.Controllers
             }
             else
             {
-                data.Id = (students.Max(m => m.Id)+1);
+                data.Id = (students.Max(m => m.Id) + 1);
                 students.Add(data);
             }
             return RedirectToAction("ModelEx2");
@@ -211,7 +211,7 @@ namespace SampleMVC.Controllers
         {
             if (id > 0)
             {
-                students.Remove(students.FirstOrDefault(m => m.Id == id));                
+                students.Remove(students.FirstOrDefault(m => m.Id == id));
             }
             return RedirectToAction("ModelEx2");
         }

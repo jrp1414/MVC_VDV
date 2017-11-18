@@ -45,6 +45,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -55,6 +61,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -141,10 +149,74 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\EFController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ViewEx2Controller.cs" />
     <Compile Include="Controllers\ViewExController.cs" />
+    <Compile Include="DBLayer\BankData.cs">
+      <DependentUpon>ERPSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBLayer\BookMaster.cs">
+      <DependentUpon>ERPSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBLayer\DepartmentMaster.cs">
+      <DependentUpon>ERPSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBLayer\DesignationMaster.cs">
+      <DependentUpon>ERPSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBLayer\EmployeeMaster.cs">
+      <DependentUpon>ERPSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBLayer\EmployeeMaster1.cs">
+      <DependentUpon>ERPSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBLayer\ERPSystem.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ERPSystem.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBLayer\ERPSystem.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ERPSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBLayer\ERPSystem.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ERPSystem.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DBLayer\ExpenseMaster.cs">
+      <DependentUpon>ERPSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBLayer\GetBankData_Result.cs">
+      <DependentUpon>ERPSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBLayer\GetEmployeeDetails_Result.cs">
+      <DependentUpon>ERPSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBLayer\InventoryMaster.cs">
+      <DependentUpon>ERPSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBLayer\LibraryMaster.cs">
+      <DependentUpon>ERPSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBLayer\NewUser.cs">
+      <DependentUpon>ERPSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBLayer\PublisherMaster.cs">
+      <DependentUpon>ERPSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBLayer\SecurityQuestionMaster.cs">
+      <DependentUpon>ERPSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBLayer\StudentMaster.cs">
+      <DependentUpon>ERPSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBLayer\TransactionMaster.cs">
+      <DependentUpon>ERPSystem.tt</DependentUpon>
+    </Compile>
     <Compile Include="Filters\LogActionAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -162,6 +234,16 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="DBLayer\ERPSystem.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ERPSystem.Context.cs</LastGenOutput>
+      <DependentUpon>ERPSystem.edmx</DependentUpon>
+    </Content>
+    <Content Include="DBLayer\ERPSystem.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ERPSystem.edmx</DependentUpon>
+      <LastGenOutput>ERPSystem.cs</LastGenOutput>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -177,6 +259,13 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <EntityDeploy Include="DBLayer\ERPSystem.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ERPSystem.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DBLayer\ERPSystem.edmx.diagram">
+      <DependentUpon>ERPSystem.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -228,12 +317,16 @@
     <Content Include="Views\ViewEx2\ErrorEx.cshtml" />
     <Content Include="Views\Error\Error404.cshtml" />
     <Content Include="Views\Error\Error500.cshtml" />
+    <Content Include="Views\EF\StudentsList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
