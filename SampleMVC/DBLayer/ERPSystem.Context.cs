@@ -32,7 +32,6 @@ namespace SampleMVC.DBLayer
         public virtual DbSet<DepartmentMaster> DepartmentMasters { get; set; }
         public virtual DbSet<DesignationMaster> DesignationMasters { get; set; }
         public virtual DbSet<EmployeeMaster> EmployeeMasters { get; set; }
-        public virtual DbSet<EmployeeMaster1> EmployeeMasters1 { get; set; }
         public virtual DbSet<ExpenseMaster> ExpenseMasters { get; set; }
         public virtual DbSet<InventoryMaster> InventoryMasters { get; set; }
         public virtual DbSet<LibraryMaster> LibraryMasters { get; set; }
@@ -41,6 +40,7 @@ namespace SampleMVC.DBLayer
         public virtual DbSet<SecurityQuestionMaster> SecurityQuestionMasters { get; set; }
         public virtual DbSet<StudentMaster> StudentMasters { get; set; }
         public virtual DbSet<TransactionMaster> TransactionMasters { get; set; }
+        public virtual DbSet<FitnessMaster> FitnessMasters { get; set; }
     
         public virtual ObjectResult<GetBankData_Result> GetBankData(Nullable<int> id)
         {

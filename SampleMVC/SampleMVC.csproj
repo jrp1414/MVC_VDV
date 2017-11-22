@@ -169,9 +169,6 @@
     <Compile Include="DBLayer\EmployeeMaster.cs">
       <DependentUpon>ERPSystem.tt</DependentUpon>
     </Compile>
-    <Compile Include="DBLayer\EmployeeMaster1.cs">
-      <DependentUpon>ERPSystem.tt</DependentUpon>
-    </Compile>
     <Compile Include="DBLayer\ERPSystem.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -188,6 +185,9 @@
       <DependentUpon>ERPSystem.edmx</DependentUpon>
     </Compile>
     <Compile Include="DBLayer\ExpenseMaster.cs">
+      <DependentUpon>ERPSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBLayer\FitnessMaster.cs">
       <DependentUpon>ERPSystem.tt</DependentUpon>
     </Compile>
     <Compile Include="DBLayer\GetBankData_Result.cs">
@@ -222,6 +222,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="HtmlHelpers\CustomTextbox.cs" />
+    <Compile Include="Models\EmployeeVM.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\StudentData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -320,6 +321,7 @@
     <Content Include="Views\EF\StudentsList.cshtml" />
     <Content Include="Views\EF\AddStudent.cshtml" />
     <Content Include="Views\EF\EditStudent.cshtml" />
+    <Content Include="Views\EF\AddEmployee.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

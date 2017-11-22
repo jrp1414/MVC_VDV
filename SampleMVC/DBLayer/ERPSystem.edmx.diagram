@@ -10,7 +10,6 @@
         <EntityTypeShape EntityType="ERPSystemModel.DepartmentMaster" Width="1.5" PointX="5.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ERPSystemModel.DesignationMaster" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
         <EntityTypeShape EntityType="ERPSystemModel.EmployeeMaster" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ERPSystemModel.EmployeeMaster1" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ERPSystemModel.ExpenseMaster" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ERPSystemModel.InventoryMaster" Width="1.5" PointX="7.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ERPSystemModel.LibraryMaster" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
@@ -22,6 +21,7 @@
         <AssociationConnector Association="ERPSystemModel.FK_Designation_DesignationIdId" ManuallyRouted="false" />
         <AssociationConnector Association="ERPSystemModel.FK_PublisherMaster_PublisherMaster" ManuallyRouted="false" />
         <AssociationConnector Association="ERPSystemModel.FK_SecurityQuestion_SecurityQuestionId" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ERPSystemModel.FitnessMaster" Width="1.5" PointX="8.375" PointY="9.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

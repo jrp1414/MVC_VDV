@@ -12,10 +12,9 @@ namespace SampleMVC.DBLayer
     using System;
     using System.Collections.Generic;
     
-    public partial class EmployeeMaster1
+    public partial class FitnessMaster
     {
-        public int EmployeeId { get; set; }
-        public string Name { get; set; }
-        public string Address { get; set; }
+        public int FitnessDataId { get; set; }
+        public string FitnessDataName { get; set; }
     }
 }

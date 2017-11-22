@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ERPSystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ERPSystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="BankDatas">
           <Key>
             <PropertyRef Name="BankId" />
@@ -60,14 +60,6 @@
           <Property Name="PetName" Type="nvarchar(max)" />
           <Property Name="EmpCode" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <EntityType Name="EmployeeMasters">
-          <Key>
-            <PropertyRef Name="EmployeeId" />
-          </Key>
-          <Property Name="EmployeeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
-        </EntityType>
         <EntityType Name="ExpenseMaster">
           <Key>
             <PropertyRef Name="ExpenseId" />
@@ -75,6 +67,13 @@
           <Property Name="ExpenseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CostCenter" Type="nchar" MaxLength="10" Nullable="false" />
           <Property Name="Description" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="FitnessMaster">
+          <Key>
+            <PropertyRef Name="FitnessDataId" />
+          </Key>
+          <Property Name="FitnessDataId" Type="int" Nullable="false" />
+          <Property Name="FitnessDataName" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="InventoryMaster">
           <Key>
@@ -124,6 +123,7 @@
           <Property Name="Address" Type="nvarchar(max)" />
           <Property Name="Age" Type="int" Nullable="false" />
           <Property Name="MobileNo" Type="int" />
+          <Property Name="Class" Type="nchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="TransactionMaster">
           <Key>
@@ -190,8 +190,8 @@
           <EntitySet Name="DepartmentMaster" EntityType="Self.DepartmentMaster" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DesignationMaster" EntityType="Self.DesignationMaster" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EmployeeMaster" EntityType="Self.EmployeeMaster" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="EmployeeMasters" EntityType="Self.EmployeeMasters" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ExpenseMaster" EntityType="Self.ExpenseMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FitnessMaster" EntityType="Self.FitnessMaster" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="InventoryMaster" EntityType="Self.InventoryMaster" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LibraryMaster" EntityType="Self.LibraryMaster" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NewUser" EntityType="Self.NewUser" Schema="dbo" store:Type="Tables" />
@@ -212,8 +212,7 @@
             <End Role="EmployeeMaster" EntitySet="EmployeeMaster" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ERPSystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -276,14 +275,6 @@
           <NavigationProperty Name="DesignationMaster" Relationship="Self.FK_Designation_DesignationIdId" FromRole="EmployeeMaster" ToRole="DesignationMaster" />
           <NavigationProperty Name="SecurityQuestionMaster" Relationship="Self.FK_SecurityQuestion_SecurityQuestionId" FromRole="EmployeeMaster" ToRole="SecurityQuestionMaster" />
         </EntityType>
-        <EntityType Name="EmployeeMaster1">
-          <Key>
-            <PropertyRef Name="EmployeeId" />
-          </Key>
-          <Property Name="EmployeeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-        </EntityType>
         <EntityType Name="ExpenseMaster">
           <Key>
             <PropertyRef Name="ExpenseId" />
@@ -342,6 +333,7 @@
           <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Age" Type="Int32" Nullable="false" />
           <Property Name="MobileNo" Type="Int32" />
+          <Property Name="Class" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
         </EntityType>
         <EntityType Name="TransactionMaster">
           <Key>
@@ -393,7 +385,6 @@
           <EntitySet Name="DepartmentMasters" EntityType="Self.DepartmentMaster" />
           <EntitySet Name="DesignationMasters" EntityType="Self.DesignationMaster" />
           <EntitySet Name="EmployeeMasters" EntityType="Self.EmployeeMaster" />
-          <EntitySet Name="EmployeeMasters1" EntityType="Self.EmployeeMaster1" />
           <EntitySet Name="ExpenseMasters" EntityType="Self.ExpenseMaster" />
           <EntitySet Name="InventoryMasters" EntityType="Self.InventoryMaster" />
           <EntitySet Name="LibraryMasters" EntityType="Self.LibraryMaster" />
@@ -415,13 +406,13 @@
             <End Role="EmployeeMaster" EntitySet="EmployeeMasters" />
           </AssociationSet>
           <FunctionImport Name="GetBankData" ReturnType="Collection(ERPSystemModel.GetBankData_Result)">
-            <Parameter Name="Id" Mode="In" Type="Int32" />
+          <Parameter Name="Id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetEmployeeDetails" ReturnType="Collection(ERPSystemModel.GetEmployeeDetails_Result)">
-            <Parameter Name="EmployeeId" Mode="In" Type="Int32" />
+          <Parameter Name="EmployeeId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetUsers">
-            <Parameter Name="UserId" Mode="In" Type="Int32" />
+          <Parameter Name="UserId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="InsertBankData">
             <Parameter Name="BankName" Mode="In" Type="String" />
@@ -429,6 +420,7 @@
             <Parameter Name="AccType" Mode="In" Type="Int32" />
             <Parameter Name="Output" Mode="InOut" Type="Int32" />
           </FunctionImport>
+          <EntitySet Name="FitnessMasters" EntityType="ERPSystemModel.FitnessMaster" />
         </EntityContainer>
         <ComplexType Name="GetBankData_Result">
           <Property Type="Int32" Name="BankId" Nullable="false" />
@@ -457,6 +449,13 @@
           <Property Type="String" Name="Designation" Nullable="false" />
           <Property Type="String" Name="Question" Nullable="false" />
         </ComplexType>
+        <EntityType Name="FitnessMaster">
+          <Key>
+            <PropertyRef Name="FitnessDataId" />
+          </Key>
+          <Property Name="FitnessDataId" Type="Int32" Nullable="false" />
+          <Property Name="FitnessDataName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -523,15 +522,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="EmployeeMasters1">
-            <EntityTypeMapping TypeName="ERPSystemModel.EmployeeMaster1">
-              <MappingFragment StoreEntitySet="EmployeeMasters">
-                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="ExpenseMasters">
             <EntityTypeMapping TypeName="ERPSystemModel.ExpenseMaster">
               <MappingFragment StoreEntitySet="ExpenseMaster">
@@ -588,6 +578,7 @@
           <EntitySetMapping Name="StudentMasters">
             <EntityTypeMapping TypeName="ERPSystemModel.StudentMaster">
               <MappingFragment StoreEntitySet="StudentMasters">
+                <ScalarProperty Name="Class" ColumnName="Class" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Address" ColumnName="Address" />
@@ -642,6 +633,14 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="GetUsers" FunctionName="ERPSystemModel.Store.GetUsers" />
           <FunctionImportMapping FunctionImportName="InsertBankData" FunctionName="ERPSystemModel.Store.InsertBankData" />
+          <EntitySetMapping Name="FitnessMasters">
+            <EntityTypeMapping TypeName="ERPSystemModel.FitnessMaster">
+              <MappingFragment StoreEntitySet="FitnessMaster">
+                <ScalarProperty Name="FitnessDataName" ColumnName="FitnessDataName" />
+                <ScalarProperty Name="FitnessDataId" ColumnName="FitnessDataId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

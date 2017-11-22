@@ -19,5 +19,6 @@ namespace SampleMVC.DBLayer
         public string Address { get; set; }
         public int Age { get; set; }
         public Nullable<int> MobileNo { get; set; }
+        public string Class { get; set; }
     }
 }
