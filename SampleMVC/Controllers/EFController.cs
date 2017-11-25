@@ -144,5 +144,11 @@ namespace SampleMVC.Controllers
 
             return View();
         }
+
+        public ActionResult GetBankData()
+        {
+            var bankData = dbContext.GetBankData(2).FirstOrDefault();
+            return Content("Test");
+        }
     }
 }
