@@ -150,6 +150,21 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DBLayer\BankData.cs" />
+    <Compile Include="DBLayer\BookMaster.cs" />
+    <Compile Include="DBLayer\DepartmentMaster.cs" />
+    <Compile Include="DBLayer\DesignationMaster.cs" />
+    <Compile Include="DBLayer\EmployeeMaster.cs" />
+    <Compile Include="DBLayer\ERPSystem.cs" />
+    <Compile Include="DBLayer\ExpenseMaster.cs" />
+    <Compile Include="DBLayer\FitnessMaster.cs" />
+    <Compile Include="DBLayer\InventoryMaster.cs" />
+    <Compile Include="DBLayer\LibraryMaster.cs" />
+    <Compile Include="DBLayer\NewUser.cs" />
+    <Compile Include="DBLayer\PublisherMaster.cs" />
+    <Compile Include="DBLayer\SecurityQuestionMaster.cs" />
+    <Compile Include="DBLayer\StudentMaster.cs" />
+    <Compile Include="DBLayer\TransactionMaster.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -192,6 +207,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\GetStudents.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
