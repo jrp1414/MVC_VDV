@@ -148,12 +148,28 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DBLayer\EmployeeMaster.cs" />
     <Compile Include="DBLayer\ERPDB.cs" />
+    <Compile Include="DBLayer\POMasterDetail.cs" />
+    <Compile Include="DBLayer\ProductMaster.cs" />
     <Compile Include="DBLayer\PurchaseDetail.cs" />
     <Compile Include="DBLayer\PurchaseMaster.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711291737013_InitialCreate.cs" />
+    <Compile Include="Migrations\201711291737013_InitialCreate.Designer.cs">
+      <DependentUpon>201711291737013_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712091649140_Mig1.cs" />
+    <Compile Include="Migrations\201712091649140_Mig1.Designer.cs">
+      <DependentUpon>201712091649140_Mig1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712091657178_Mig2.cs" />
+    <Compile Include="Migrations\201712091657178_Mig2.Designer.cs">
+      <DependentUpon>201712091657178_Mig2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -179,7 +195,9 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -212,6 +230,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201711291737013_InitialCreate.resx">
+      <DependentUpon>201711291737013_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712091649140_Mig1.resx">
+      <DependentUpon>201712091649140_Mig1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712091657178_Mig2.resx">
+      <DependentUpon>201712091657178_Mig2.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

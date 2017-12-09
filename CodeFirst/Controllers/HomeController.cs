@@ -1,6 +1,7 @@
 ﻿using CodeFirst.DBLayer;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -50,6 +51,19 @@ namespace CodeFirst.Controllers
 
             dbContext.SaveChanges();
             return Content("Test");
+        }
+
+        public ActionResult InsertProduct()
+        {
+            dbContext.ProductMaster.Add(new ProductMaster {  Category="AutoMobile", ProductCode="PR001", ProductName="Chesis"});
+            dbContext.SaveChanges();
+            return Content("Test");
+        }
+
+        public ActionResult GetPODetails()
+        {
+            var poDetails = dbContext.Database.SqlQuery<POMasterDetail>("dbo.GetProductDetails @PONumber", new SqlParameter("@PONumber", 1)).ToList();
+            return Json(poDetails,JsonRequestBehavior.AllowGet);
         }
     }
 }

@@ -26,6 +26,9 @@ namespace CodeFirstFromDB.DBLayer
         public virtual DbSet<SecurityQuestionMaster> SecurityQuestionMasters { get; set; }
         public virtual DbSet<StudentMaster> StudentMasters { get; set; }
         public virtual DbSet<TransactionMaster> TransactionMasters { get; set; }
+        public virtual DbSet<CountryMaster> CountryMasters { get; set; }
+
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

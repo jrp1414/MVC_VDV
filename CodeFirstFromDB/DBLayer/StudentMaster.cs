@@ -20,5 +20,7 @@ namespace CodeFirstFromDB.DBLayer
 
         [StringLength(10)]
         public string Class { get; set; }
+
+        public int RollNo { get; set; }
     }
 }

@@ -160,6 +160,9 @@
     <Compile Include="DBLayer\BookMaster.cs">
       <DependentUpon>ERPSystem.tt</DependentUpon>
     </Compile>
+    <Compile Include="DBLayer\CountryMaster.cs">
+      <DependentUpon>ERPSystem.tt</DependentUpon>
+    </Compile>
     <Compile Include="DBLayer\DepartmentMaster.cs">
       <DependentUpon>ERPSystem.tt</DependentUpon>
     </Compile>

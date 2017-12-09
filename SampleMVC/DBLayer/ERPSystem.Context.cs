@@ -41,6 +41,7 @@ namespace SampleMVC.DBLayer
         public virtual DbSet<StudentMaster> StudentMasters { get; set; }
         public virtual DbSet<TransactionMaster> TransactionMasters { get; set; }
         public virtual DbSet<FitnessMaster> FitnessMasters { get; set; }
+        public virtual DbSet<CountryMaster> CountryMasters { get; set; }
     
         public virtual ObjectResult<GetBankData_Result> GetBankData(Nullable<int> id)
         {

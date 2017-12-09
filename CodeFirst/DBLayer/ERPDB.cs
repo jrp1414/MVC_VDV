@@ -16,5 +16,9 @@ namespace CodeFirst.DBLayer
 
         public DbSet<PurchaseDetail> PurchaseDetails { get; set; }
 
+        public DbSet<ProductMaster> ProductMaster { get; set; }
+
+        public DbSet<EmployeeMaster> EmployeeMaster { get; set; }
+
     }
 }

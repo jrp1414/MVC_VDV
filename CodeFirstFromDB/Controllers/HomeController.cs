@@ -85,5 +85,19 @@ namespace CodeFirstFromDB.Controllers
             dbContext.SaveChanges();
             return Content("");
         }
+
+        public ActionResult CFDBChanges()
+        {
+            dbContext.CountryMasters.AddRange(new List<CountryMaster>
+            {
+                new CountryMaster{ Name="India" },
+                new CountryMaster{ Name="Pakistan" },
+                new CountryMaster{ Name="Srilanka" }
+            });
+            dbContext.StudentMasters.Add(new StudentMaster { Address="Kolkata", Age=14, Class="7th", MobileNo=858899698, Name="Omkar", RollNo=3  });
+
+            dbContext.SaveChanges();
+            return Content("Test");
+        }
     }
 }

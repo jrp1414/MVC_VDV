@@ -152,6 +152,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DBLayer\BankData.cs" />
     <Compile Include="DBLayer\BookMaster.cs" />
+    <Compile Include="DBLayer\CountryMaster.cs" />
     <Compile Include="DBLayer\DepartmentMaster.cs" />
     <Compile Include="DBLayer\DesignationMaster.cs" />
     <Compile Include="DBLayer\EmployeeMaster.cs" />
