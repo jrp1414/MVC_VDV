@@ -1,0 +1,20 @@
+﻿<script src="~/Scripts/jquery-3.2.1.js"></script>
+<script>
+    $(function () {
+        $("#btnClick").click(SomeFunc);
+    });
+
+    function SomeFunc() {
+        alert("This pop up will appear when button will be clicked");
+        $("#divResult").text("Button Clicked");
+    }
+</script>
+@{
+    ViewBag.Title = "JqEx1";
+}
+
+<h2>JqEx1</h2>
+
+<button id="btnClick" class="btn btn-primary">Click Here</button>
+
+<div id="divResult"></div>

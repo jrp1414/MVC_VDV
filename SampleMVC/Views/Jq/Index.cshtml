@@ -1,0 +1,26 @@
+﻿
+<script>
+    window.onload = function () {
+        document.getElementById("btnClick").onclick = SomeFunc;
+    }
+
+    function SomeFunc() {
+        alert("This pop up will appear when button will be clicked");
+        document.getElementById("divResult").innerText = "Button Clicked";
+    }
+</script>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+@*<button id="btnClick" onclick="alert('Button Clicked')" class="btn btn-primary">Click Here</button>*@
+
+@*<button id="btnClick" onclick="SomeFunc()" class="btn btn-primary">Click Here</button>*@
+
+<button id="btnClick" class="btn btn-primary">Click Here</button>
+
+<div id="divResult"></div>
