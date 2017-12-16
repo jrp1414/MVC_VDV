@@ -328,6 +328,7 @@
     <Content Include="Views\EF\AddEmployee.cshtml" />
     <Content Include="Views\Jq\Index.cshtml" />
     <Content Include="Views\Jq\JqEx1.cshtml" />
+    <Content Include="Views\Jq\JqEx2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -18,5 +18,10 @@ namespace SampleMVC.Controllers
         {
             return View();
         }
+
+        public ActionResult JqEx2()
+        {
+            return View();
+        }
     }
 }

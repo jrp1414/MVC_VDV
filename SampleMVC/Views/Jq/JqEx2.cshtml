@@ -1,0 +1,72 @@
+﻿<script src="~/Scripts/jquery-3.2.1.js"></script>
+<script>
+    $(function () {
+        $("#btnClick").click(function () {
+            //alert("Button Clicked");
+
+            // ID Selector
+            //$("#divResult").text("Some Text Added");
+
+            // Name attribute selector
+            //$("[name='divResult2']").text("Name attribute selector example");
+
+            // Class Name Selector
+            //$(".myClass1").text("I used the class name selector successfully");
+
+            // Custom attribute selector
+            //$("[deepak='test']").text("Custom Attribute selector example");
+
+            // Element type selector
+            //$("p").text("Element type selector example");
+
+            // Odd Even Selector
+            //$("#ulList :even()").text("Even Selector applied");
+            //$("#ulList :odd()").text("Odd Selector applied");
+
+            // Text Content Search Selector
+            //$("p:contains('simple')").addClass("myClass1");
+
+            //Multiple attribute Selector
+            //$("[deepak='test2']").addClass("myClass1");
+            //$("[deepak='test2'][name='test3']").addClass("myClass1");
+
+
+        });
+    });
+</script>
+<style>
+    .myClass1 {
+    background-color:aqua;
+    }
+</style>
+<div>
+    <button id="btnClick">Click Here</button>
+
+    <div id="divResult">Some Text</div>
+
+    <div name="divResult2"></div>
+
+    @*<div class="myClass1">Class Name Selector</div>
+    <div class="myClass1">Class Name Selector 2</div>*@
+    <div>My Name is Alok</div>
+    <div deepak="test" >----</div>
+    <div deepak="test2" name="test2">----</div>
+    <div deepak="test2" name="test3">----</div>
+
+    <p>
+        This is a simple paragraph.
+    </p>
+
+    <ul id="ulList">
+        <li>Line 1</li>
+        <li>Line 2</li>
+        <li>Line 3</li>
+        <li>Line 4</li>
+        <li>Line 5</li>
+        <li>Line 6</li>
+        <li>Line 7</li>
+        <li>Line 8</li>
+        <li>Line 9</li>
+        <li>Line 10</li>
+    </ul>
+</div>
